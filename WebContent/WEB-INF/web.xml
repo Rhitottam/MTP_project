@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MTP_proj_server</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>upload.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param> 
+    <description>Location to store uploaded file</description> 
+    <param-name>file-upload</param-name> 
+    <param-value>
+         F:\[Data]\input\
+    </param-value> 
+ </context-param>
+ <servlet>
+    <display-name>getFile</display-name>
+    <servlet-name>getFile</servlet-name>
+    <servlet-class>download_servlet.GetFile</servlet-class>
+    <load-on-startup>1</load-on-startup>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>getFile</servlet-name>
+    <url-pattern>/download/*</url-pattern>
+ </servlet-mapping>
+</web-app>
